@@ -1,0 +1,424 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{Assignment\_3}
+\author{Swetha}
+\date{10/14/2022}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Assignment\_3},
+  pdfauthor={Swetha},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+Objective Function Minimize TC =
+622x11+614x12+630x13+641x21+645x22+649x23 These are subject to following
+constraints supply constraints: x11+x12+x13 \textgreater= 100
+x21+x22+x23 \textgreater= 120 demand constraints: x11+x21 \textgreater=
+80 x12+x22 \textgreater= 60 x13+x23 \textgreater= 70
+
+Now allare subjected to non-negativity where xij\textgreater=0 where
+i=1,2 and j= 1,2,3
+
+\#loading packages
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(Matrix)}
+\FunctionTok{library}\NormalTok{(}\StringTok{"lpSolve"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'lpSolve' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{display }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{22}\NormalTok{,}\DecValTok{14}\NormalTok{,}\DecValTok{30}\NormalTok{,}\DecValTok{600}\NormalTok{,}\DecValTok{100}\NormalTok{,}
+                  \DecValTok{16}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{24}\NormalTok{,}\DecValTok{625}\NormalTok{,}\DecValTok{120}\NormalTok{,}
+                  \DecValTok{80}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{,}\StringTok{"{-}"}\NormalTok{,}\StringTok{"210/220"}\NormalTok{),}\AttributeTok{ncol=}\DecValTok{5}\NormalTok{,}\AttributeTok{nrow=}\DecValTok{3}\NormalTok{,}\AttributeTok{byrow=}\ConstantTok{TRUE}\NormalTok{)}
+ \FunctionTok{colnames}\NormalTok{(display) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Warehouse1"}\NormalTok{,}\StringTok{"Warehouse2"}\NormalTok{,}\StringTok{"Warehouse3"}\NormalTok{,}\StringTok{"Production Cost"}\NormalTok{,}\StringTok{"Production Capacity"}\NormalTok{)}
+ \FunctionTok{rownames}\NormalTok{(display) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"PlantA"}\NormalTok{,}\StringTok{"PlantB"}\NormalTok{,}\StringTok{"Monthly Demand"}\NormalTok{)}
+\NormalTok{ display }\OtherTok{\textless{}{-}} \FunctionTok{as.table}\NormalTok{(display)}
+\NormalTok{ display}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                Warehouse1 Warehouse2 Warehouse3 Production Cost
+## PlantA         22         14         30         600            
+## PlantB         16         20         24         625            
+## Monthly Demand 80         60         70         -              
+##                Production Capacity
+## PlantA         100                
+## PlantB         120                
+## Monthly Demand 210/220
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  display1 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{622}\NormalTok{,}\DecValTok{614}\NormalTok{,}\DecValTok{630}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{100}\NormalTok{,}
+                  \DecValTok{641}\NormalTok{,}\DecValTok{645}\NormalTok{,}\DecValTok{649}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{120}\NormalTok{,}
+                  \DecValTok{80}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{220}\NormalTok{),}\AttributeTok{ncol=}\DecValTok{5}\NormalTok{,}\AttributeTok{nrow=}\DecValTok{3}\NormalTok{,}\AttributeTok{byrow=}\ConstantTok{TRUE}\NormalTok{)}
+ \FunctionTok{colnames}\NormalTok{(display1) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Warehouse1"}\NormalTok{,}\StringTok{"Warehouse2"}\NormalTok{,}\StringTok{"Warehouse3"}\NormalTok{,}\StringTok{"Dummy"}\NormalTok{,}\StringTok{"Production Capacity"}\NormalTok{)}
+ \FunctionTok{rownames}\NormalTok{(display1) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"PlantA"}\NormalTok{,}\StringTok{"PlantB"}\NormalTok{,}\StringTok{"Monthly Demand"}\NormalTok{)}
+\NormalTok{ display1 }\OtherTok{\textless{}{-}} \FunctionTok{as.table}\NormalTok{(display1)}
+\NormalTok{ display1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                Warehouse1 Warehouse2 Warehouse3 Dummy Production Capacity
+## PlantA                622        614        630     0                 100
+## PlantB                641        645        649     0                 120
+## Monthly Demand         80         60         70    10                 220
+\end{verbatim}
+
+\#The balanced problem will be satisfied by this table. Below is a cost
+totals matrix that we created.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{totalcosts }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{622}\NormalTok{,}\DecValTok{614}\NormalTok{,}\DecValTok{630}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                   \DecValTok{641}\NormalTok{,}\DecValTok{645}\NormalTok{,}\DecValTok{649}\NormalTok{,}\DecValTok{0}\NormalTok{),}\AttributeTok{nrow=}\DecValTok{2}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#finding the production capacity in the matrix's row
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{row.rhs }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{120}\NormalTok{)}
+\NormalTok{ row.signs }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\StringTok{"\textless{}="}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#using the double variable 10 at the end to determine the monthly
+demand.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{col.rhs }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{80}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{ col.signs }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\StringTok{"\textgreater{}="}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#now we are ready to run LP Transport command
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lp.transport}\NormalTok{(totalcosts,}\StringTok{"min"}\NormalTok{,row.signs,row.rhs,col.signs,col.rhs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Success: the objective function is 132790
+\end{verbatim}
+
+\hypertarget{solution-matrix}{%
+\section{solution matrix}\label{solution-matrix}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lp.transport}\NormalTok{(totalcosts, }\StringTok{"min"}\NormalTok{, row.signs, row.rhs, col.signs, col.rhs)}\SpecialCharTok{$}\NormalTok{solution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4]
+## [1,]    0   60   40    0
+## [2,]   80    0   30   10
+\end{verbatim}
+
+We can conclude from this that Z = \$132790. The results are as follows
+for each of the variables: 60x12 which is the Warehouse 2 from plant A.
+40x13 which is the Warehouse 3 from plant A. 80x21 which is the
+Warehouse 1 from plant B. 30x23 which is the Warehouse 3 from plant B.
+and because ``10'' shows up in the 4th Variable 10x24 is a ``throw away
+variable''.
+
+Question 2) We are aware that the number of constants in dual and the
+number of variables in primal are the same. The primary of the LP is
+asked in the first question. We shall maximize in the dual because we
+choose to minimize in the primal. Let's utilize ``m'' and ``n'' as our
+variables for the dual problem.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{display2 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{622}\NormalTok{,}\DecValTok{614}\NormalTok{,}\DecValTok{630}\NormalTok{,}\DecValTok{100}\NormalTok{,}\StringTok{"m\_1"}\NormalTok{,}
+                  \DecValTok{641}\NormalTok{,}\DecValTok{645}\NormalTok{,}\DecValTok{649}\NormalTok{,}\DecValTok{120}\NormalTok{,}\StringTok{"m\_2"}\NormalTok{,}
+                  \DecValTok{80}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{,}\DecValTok{220}\NormalTok{,}\StringTok{"{-}"}\NormalTok{,}
+                  \StringTok{"n\_1"}\NormalTok{,}\StringTok{"n\_2"}\NormalTok{,}\StringTok{"n\_3"}\NormalTok{,}\StringTok{"{-}"}\NormalTok{,}\StringTok{"{-}"}\NormalTok{),}\AttributeTok{ncol=}\DecValTok{5}\NormalTok{,}\AttributeTok{nrow=}\DecValTok{4}\NormalTok{,}\AttributeTok{byrow=}\ConstantTok{TRUE}\NormalTok{)}
+ \FunctionTok{colnames}\NormalTok{(display2) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"W1"}\NormalTok{,}\StringTok{"W2"}\NormalTok{,}\StringTok{"W3"}\NormalTok{,}\StringTok{"Prod Cap"}\NormalTok{,}\StringTok{"Supply (Dual)"}\NormalTok{)}
+ \FunctionTok{rownames}\NormalTok{(display2) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"PlantA"}\NormalTok{,}\StringTok{"PlantB"}\NormalTok{,}\StringTok{"Monthly Demand"}\NormalTok{,}\StringTok{"Demand (Dual)"}\NormalTok{)}
+\NormalTok{ display2 }\OtherTok{\textless{}{-}} \FunctionTok{as.table}\NormalTok{(display2)}
+\NormalTok{ display2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                W1  W2  W3  Prod Cap Supply (Dual)
+## PlantA         622 614 630 100      m_1          
+## PlantB         641 645 649 120      m_2          
+## Monthly Demand 80  60  70  220      -            
+## Demand (Dual)  n_1 n_2 n_3 -        -
+\end{verbatim}
+
+Now we are going to create our objective function based on the
+constraints from the primal. Later we will use the objective function
+from the primal to find the constants of the dual.
+
+Maximize Z = 100m1+120m2+80n1+60n2+70n3
+
+This objective function is subject to following constraints:
+
+m1+n1 \textless= 622 m1+n2 \textless= 614 m1+n3 \textless= 630 m2+n1
+\textless= 641 m2+n2 \textless= 645 m2+n3 \textless= 649
+
+These variables were extracted from the linear programming function's
+transposed primal matrix. Transposing the f.con into the matrix and
+comparing it to the primal's above constants is an easy way to verify.
+These are confined where m=1,2 \& n=1,2,3 and mk, nl
+
+\#Constants of the primal are now the objective function variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ f.obj }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{120}\NormalTok{,}\DecValTok{80}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{)}
+ \CommentTok{\#transposed from the constraints matrix in the primal}
+\NormalTok{ f.con }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                   \DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                   \DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}
+                   \DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                   \DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                   \DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}\AttributeTok{nrow=}\DecValTok{6}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{)}
+ \CommentTok{\#these change As we are MAX the dual not min}
+\NormalTok{ f.dir }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"\textless{}="}\NormalTok{,}
+ \StringTok{"\textless{}="}\NormalTok{,}
+ \StringTok{"\textless{}="}\NormalTok{,}
+ \StringTok{"\textless{}="}\NormalTok{,}
+\StringTok{"\textless{}="}\NormalTok{, }\StringTok{"\textless{}="}\NormalTok{)}
+\NormalTok{ f.rhs }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{622}\NormalTok{,}\DecValTok{614}\NormalTok{,}\DecValTok{630}\NormalTok{,}\DecValTok{641}\NormalTok{,}\DecValTok{645}\NormalTok{,}\DecValTok{649}\NormalTok{)}
+ \FunctionTok{lp}\NormalTok{ (}\StringTok{"max"}\NormalTok{, f.obj, f.con, f.dir, f.rhs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Success: the objective function is 139120
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lp}\NormalTok{ (}\StringTok{"max"}\NormalTok{, f.obj, f.con, f.dir, f.rhs)}\SpecialCharTok{$}\NormalTok{solution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 614 633   8   0  16
+\end{verbatim}
+
+So Z=139,120 dollars and variables are: m1 = 614 which represents plant
+A m2 = 633 which represents Plant B n1 = 8 which represents Warehouse 1
+n3 = 16 which represents Warehouse 3
+
+OBSERVATION
+
+The minimal Z=132790 (Primal) and the maximum Z=139120(Dual). What are
+we trying to max/min in this problem. We found that we should not be
+shipping from Plant(A/B) to all three Warehouses. We should be shipping
+from:
+
+60x12 which is 60 Units from Plant A to Warehouse 2. 40x13 which is 40
+Units from Plant A to Warehouse 3. 80x21 which is 60 Units from Plant B
+to Warehouse 1. 30x23 which is 60 Units from Plant B to Warehouse 3. Now
+we want to Max the profits from each distribution in respect to
+capacity.
+
+Question 3)
+
+m1 - n1 \textless= 622
+
+then we subtract n1 to the other side to get m1 \textless= 622 - n1
+
+To compute that value it would be \$614\textless=(-8+622) which is true.
+We would continue to evaluate these equations:
+
+m1 \textless= 622-n1===614\textless=622-8=614 = TRUE m1 \textless=
+614-n2===614\textless=614-0=614 = TRUE m1 \textless=
+630-n3===614\textless=630-16=614 = TRUE m2 \textless=
+641-n1===633\textless=641-8=633 = TRUE m2 \textless=
+645−n2===633\textless=645-0=645 = NOT TRUE m2 \textless=
+649-n3===633\textless=649-16=633 = TRUE
+
+\#By updating each column, we can test for the shadow price while also
+learning from the Duality-and-Sensitivity. We change the 100 to 101 and
+120 to 121 in our LP Transport.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{row.rhs1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{101}\NormalTok{,}\DecValTok{120}\NormalTok{)}
+\NormalTok{ row.signs1 }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\StringTok{"\textless{}="}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{ col.rhs1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{80}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{ col.signs1 }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\StringTok{"\textgreater{}="}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\NormalTok{ row.rhs2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{121}\NormalTok{)}
+\NormalTok{ row.signs2 }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\StringTok{"\textless{}="}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{ col.rhs2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{80}\NormalTok{,}\DecValTok{60}\NormalTok{,}\DecValTok{70}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{ col.signs2 }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\StringTok{"\textgreater{}="}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+ \FunctionTok{lp.transport}\NormalTok{(totalcosts,}\StringTok{"min"}\NormalTok{,row.signs,row.rhs,col.signs,col.rhs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Success: the objective function is 132790
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \FunctionTok{lp.transport}\NormalTok{(totalcosts,}\StringTok{"min"}\NormalTok{,row.signs1,row.rhs1,col.signs1,col.rhs1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Success: the objective function is 132771
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lp.transport}\NormalTok{(totalcosts,}\StringTok{"min"}\NormalTok{,row.signs2,row.rhs2,col.signs2,col.rhs2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Success: the objective function is 132790
+\end{verbatim}
+
+Since we are taking the minimum of this particular function, the fact
+that the number decreases by 19 indicates that the shadow price, which
+was determined by adding 1 to each of the Plants and the primordial, is
+19. Plant B, on the other hand, doesn't have a shadow price.
+Additionally, we discovered that the dual variable n2 with the
+relationship Marginal Revenue (MR) = Marginal Cost (MC). Considering the
+equation that was It was determined that m2 = 645 -n2===633=645-0=645 =
+NOT TRUE by utilizing m1-n1 = 622.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lp}\NormalTok{ (}\StringTok{"max"}\NormalTok{, f.obj, f.con, f.dir, f.rhs)}\SpecialCharTok{$}\NormalTok{solution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 614 633   8   0  16
+\end{verbatim}
+
+n\_2 was = 0.
+
+CONCLUSION: from the primal: 60x12 which is 60 Units from Plant A to
+Warehouse 2. 40x13 which is 40 Units from Plant A to Warehouse 3. 80x21
+which is 60 Units from Plant B to Warehouse 1. 30x23 which is 60 Units
+from Plant B to Warehouse 3. from the dual We want the MR=MC. Five of
+the six MR\textless=MC. The only equation that does not satisfy this
+requirement is Plant B to Warehouse 2. We can see that from the primal
+that we will not be shipping any AED device there.
+
+\end{document}
