@@ -1,0 +1,117 @@
+---
+title: "Assignment_5"
+author: "Swetha"
+date: "11/2/2022"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+## Problem - GOAL PROGRAMMING
+
+The Research and Development Division of the Emax Corporation has developed three new 
+products. A decision now needs to be made on which mix of these products should be produced. 
+Management wants primary consideration given to three factors: total profit, stability in the 
+workforce, and achieving an increase in the company’s earnings next year from the $75 million 
+achieved this year. In particular, using the units given in the following table, they want to 
+ 
+Maximize Z = P - 6C - 3D, where  
+ 
+P = total (discounted) profit over the life of the new products, 
+C = change (in either direction) in the current level of employment, 
+D = decrease (if any) in next year’s earnings from the current year’s level. 
+ 
+The amount of any increase in earnings does not enter into Z, because management is concerned 
+primarily with just achieving some increase to keep the stockholders happy. (It has mixed 
+feelings about a large increase that then would be difficult to surpass in subsequent years.) 
+ 
+The impact of each of the new products (per unit rate of production) on each of these factors is 
+shown in the following table: 
+
+## Soultion
+
+According on the problem statement, the goal is to:
+
+Maximize Z = P - 6*C - 3*D
+
+  P = total (discounted) profit over the life of the new products,
+  C = change (in either direction) in the current level of employment,
+  D = decrease (if any) in next year’s earnings from the current year’s level.
+
+Subject to:
+
+Total Profit: Maximize P = 20*X1 + 15*X2 + 25*X3
+
+Employment Level: 6*X1 + 4*X2 + 5*X3 = 50
+
+Earnings Next Year: 8*X1 + 7*X2 + 5*X3 >= 75
+
+As a result, the auxillery variables become:
+
+Y1 = 6*X1 + 4*X2 + 5*X3 - 50
+Y2 = 8*X1 + 7*X2 + 5*X3 - 75
+
+Which means:
+
+(Y1P - Y1M) = 6*X1 + 4*X2 + 5*X3 - 50
+(Y2P - Y2M) = 8*X1 + 7*X2 + 5*X3 - 75
+
+Therefore, the final problem statement is:
+
+Maximize Z = 20*X1 + 15*X2 + 25*X3 - 6*Y1P - 6*Y1M - 3*Y2M
+
+Subject to:
+
+6*X1 + 4*X2 + 5*X3 - (Y1P - Y1M) = 50
+8*X1 + 7*X2 + 5*X3 - (Y2P - Y2M) = 75
+
+And:
+
+X1, X2, X3 >= 0
+Y1P, Y1M, Y2P, Y2M >= 0
+
+finally, I am running  linear programming model in R
+
+```{r}
+#loading the .lp file
+getwd()
+setwd("C:/Users/mercy/OneDrive/Desktop/QMM/Assignment_5")
+```
+
+```{r}
+# Here we will require the "lpSolveAPI" library
+require(lpSolveAPI)
+```
+
+
+```{r}
+# Importing the .lp file for this problem
+lp_model <- read.lp("Max.lp")
+# Returning the linear programming model
+lp_model
+```
+
+```{r}
+# Solving the linear programming model
+solve(lp_model)
+# Getting the objectives of linear programming model
+get.objective(lp_model)
+# Getting the variables of linear programming model
+get.variables(lp_model)
+```
+
+We can conclude a number of conclusions from the linear programming model's output.
+
+X1 = 0
+X2 = 0
+X3 = 15
+Y1P = 25
+Y1M = 0
+Y2M = 0
+Y2P = 0
+
+ 
+Hence we can say that product mix must only have the product 3. With this mix, there would be an object value of 225 units. The goal for earnings of next year is also fully met. Anyways the employment level goal will be exceeded by 25 units which relates to 2,500 employees and a penalty of 150 units to the objective function.
+
+
+ 
